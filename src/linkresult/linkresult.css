@@ -35,8 +35,9 @@
   }
 
   #linkResult p {
-    padding: 0.5em;
+    padding: 0.7em;
     text-align: left;
+    font-size: 13px;
   }
 
   #linkResult Button {

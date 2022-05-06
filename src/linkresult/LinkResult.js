@@ -8,6 +8,11 @@ const LinkResult = ({ shortLink, value }) => {
     linkResultButton.current.textContent = "Copied!";
     linkResultButton.current.style.backgroundColor = "hsl(257, 27%, 26%)";
     linkResultButton.current.style.color = "#fff";
+
+    setTimeout(function () {
+      linkResultButton.current.textContent = "Copy";
+      linkResultButton.current.style.backgroundColor = "hsl(180, 66%, 49%)";
+    }, 5000);
   };
   return (
     <>

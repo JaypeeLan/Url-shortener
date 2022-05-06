@@ -52,7 +52,7 @@
 
 @media (max-width: 740px) {
   #statistics > p {
-    width: 60%;
+    width: 100%;
   }
 
   #stats {
