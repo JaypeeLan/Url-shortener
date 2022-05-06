@@ -5,6 +5,8 @@ import "./main.css";
 const Main = () => {
   const [value, setValue] = useState(" ");
   const [shortLink, setShortLink] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   var inputField = useRef();
   var data;
 
@@ -13,16 +15,22 @@ const Main = () => {
       inputField.current.style.border = "1px solid red";
       alert("please enter a link..");
     } else {
+      setIsLoading(true);
       const fetchData = async () => {
         try {
           let res = await fetch(
             `https://api.shrtco.de/v2/shorten?url=${value}`
           );
-
+          if (!res.ok === true) {
+            throw new Error("Please try again!");
+          }
           data = await res.json();
           setShortLink(data.result.full_short_link);
-        } catch (error) {
-          alert("error : ", error);
+          setIsLoading(false);
+          setErrorMsg("");
+        } catch (err) {
+          setIsLoading(false);
+          setErrorMsg(`Error : ${err.message}`);
         }
       };
       fetchData();
@@ -41,6 +49,8 @@ const Main = () => {
         />
 
         <button onClick={handleClick}>Shorten it!</button>
+        <p style={{ color: "red" }}>{errorMsg}</p>
+        {isLoading && <p style={{ color: "#fff" }}> Please wait...</p>}
         <LinkResult shortLink={shortLink} value={value} />
       </div>
     </div>
