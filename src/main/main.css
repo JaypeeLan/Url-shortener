@@ -1,0 +1,52 @@
+#link {
+  position: relative;
+  margin-bottom: -36px;
+  z-index: 99;
+  width: 75%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 2px solid black;
+  padding: 2rem 1rem 2rem 1rem;
+  border-radius: 5px;
+  background-image: url(../images/bg-shorten-desktop.svg);
+  background-color: var(--background-img);
+}
+
+#link input {
+  width: 75%;
+  border-radius: 5px;
+  height: 33px;
+  border: 0.5px solid black;
+}
+
+#link button {
+  height: 33px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.5px solid var(--buttons-bg);
+  border-radius: 5px;
+  background-color: var(--buttons-bg);
+  margin-left: 25px;
+}
+#link button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 702px) {
+  #link {
+    margin-bottom: -55px;
+    padding-bottom: 0;
+  }
+  #link input {
+    margin-bottom: 15px;
+  }
+  #link button {
+    color: #fff;
+    font-weight: bolder;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+}

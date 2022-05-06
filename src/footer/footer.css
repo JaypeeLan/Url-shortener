@@ -1,0 +1,8 @@
+#footer {
+  border: 1px solid black;
+  padding: 2rem 0 2rem 0;
+  width: 75%;
+  margin: 0 auto;
+  background-image: url(../images/bg-boost-desktop.svg);
+  background-color: var(--background-img);
+}
